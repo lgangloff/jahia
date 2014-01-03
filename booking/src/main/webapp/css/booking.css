@@ -1,0 +1,31 @@
+
+.calendar-wrapper{   
+	width: 800px;
+}
+
+#addEventButton{
+	float: right;
+	
+}
+#calendar{
+}
+#addEvtForm{
+}
+
+#addEvtForm .group{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#addEvtForm .step{
+	padding: 5px;
+}
+#addEvtForm .step label{
+	display: block;
+}
+#addEvtForm .step input, #addEvtForm .step select{
+	margin: 5px 0px;
+}
+#addEvtForm #duration{
+	width: 30px;
+}

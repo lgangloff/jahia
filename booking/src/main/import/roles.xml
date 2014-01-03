@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roles jcr:primaryType="jnt:roles" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:jnt="http://www.jahia.org/jahia/nt/1.0"
+	xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:commix="http://www.jahia.com/jahia/mix/1.0"
+	xmlns:jmix="http://www.jahia.org/jahia/mix/1.0" xmlns:j="http://www.jahia.org/jahia/1.0"
+	xmlns:mix="http://www.jcp.org/jcr/mix/1.0">
+
+	<resource-validator xmlns:rep="internal"
+		j:nodeTypes="jnt:resource"
+		j:permissions="/permissions/actions/booking/bookingValidation /permissions/repository-permissions/jcr:all_default /permissions/repository-permissions/jcr:all_live"
+		j:privilegedAccess="true" j:roleGroup="live-role" jcr:mixinTypes="jmix:accessControlled"
+		jcr:primaryType="jnt:role" />
+
+</roles>

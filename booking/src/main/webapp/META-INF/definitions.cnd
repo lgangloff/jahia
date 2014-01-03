@@ -1,0 +1,29 @@
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+
+[jmix:booking] > jmix:editorialContent, jmix:droppableContent mixin
+
+[jnt:resource] > jnt:content, jmix:editorialContent, mix:title
+ - description (string, richtext) i18n
+ - needValidation (boolean) = false
+ - type (weakreference, category[autoSelectParent=false])
+ - color (string, color)
+
+[jnt:booking] > jnt:content
+ - start (date,datetimepicker)
+ - end (date,datetimepicker)
+ - resourceRef (weakreference) mandatory
+ - ownerRef (weakreference, choicelist[users]) < jnt:user
+ - status (string,choicelist[resourceBundle]) = '02_validated' mandatory < '01_created','02_validated'
+ 
+[jnt:bookingPlanning] > jnt:content, mix:title, jmix:booking
+ - baseResourceType (weakreference, category[autoSelectParent=false]) 
+ + * (jnt:booking)
+ + * (jnt:resource)
+ 
+[jnt:currentUserUpcomingBookings] > jnt:content, jmix:list, mix:title, jmix:booking
+ - max (long) = 10 mandatory
+ - bookingPlanningRef (weakreference) mandatory < jnt:bookingPlanning
+ 
+[jnt:bookingsToBeValidated] > jnt:content, jmix:list, mix:title, jmix:booking
+ - bookingPlanningRef (weakreference) mandatory < jnt:bookingPlanning

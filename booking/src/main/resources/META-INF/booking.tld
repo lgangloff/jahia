@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+    <description>Provides tags for manipulating Jahia Booking</description>
+    <display-name>Booking Tag Library</display-name>
+    <tlib-version>1.0</tlib-version>
+    <short-name>book</short-name>
+    <uri>http://www.lgf.org/tags/jahia/booking</uri>
+
+    <function>
+        <description>Parse une date au format JCR</description>
+        <name>parse</name>
+        <function-class>org.lgf.jahia.booking.taglibs.BookingTagUtils</function-class>
+        <function-signature>java.util.Date parse(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <description>Parse une date au format JCR et lui ajoute X minutes</description>
+        <name>parseAndAddMinutes</name>
+        <function-class>org.lgf.jahia.booking.taglibs.BookingTagUtils</function-class>
+        <function-signature>java.util.Date parseAndAddMinutes(java.lang.String, java.lang.Integer)</function-signature>
+    </function>
+    
+    
+    <function>
+        <description>Retourne les resources d'un type libre pour les dates données</description>
+        <name>getResourceFree</name>
+        <function-class>org.lgf.jahia.booking.taglibs.BookingTagUtils</function-class>
+        <function-signature>java.util.List getResourceFree(org.jahia.services.content.JCRNodeWrapper, java.lang.String, java.util.Date, java.util.Date)</function-signature>
+    </function>
+
+    <function>
+        <description>Retourne les réservations à valider pour lesquelles l'utilisateur courant à le droit de valider les réservations
+        de ce type de resource</description>
+        <name>getBookingToBeValidated</name>
+        <function-class>org.lgf.jahia.booking.taglibs.BookingTagUtils</function-class>
+        <function-signature>java.util.List getBookingToBeValidated(org.jahia.services.content.JCRNodeWrapper)</function-signature>
+    </function>
+
+
+    <function>
+        <description>Retourne la date du moment au format JCR (UTC)</description>
+        <name>now</name>
+        <function-class>org.lgf.jahia.booking.taglibs.BookingTagUtils</function-class>
+        <function-signature>java.lang.String now()</function-signature>
+    </function>
+</taglib>
