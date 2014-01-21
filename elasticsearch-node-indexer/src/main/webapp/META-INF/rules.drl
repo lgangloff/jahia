@@ -1,0 +1,29 @@
+package org.lgf.jahia.esni.rules
+
+#list any import classes here.
+import org.jahia.services.content.rules.*
+
+expander rules.dsl
+
+#declare any global variables here
+global ElasticSearch elasticSearch
+
+rule "Index a node in elasticsearch"
+    when
+        A node is published
+        The node has a parent
+        	- it has the type jmix:elasticSearchList
+        The parent has a property indexName
+    then
+        Index the subnodes of parent in elasticsearch at index named property
+end
+
+
+rule "Index a list in elasticsearch"
+    when
+        A node is published
+        	- it has the type jmix:elasticSearchList
+        The node has a property indexName
+    then
+        Index the subnodes of node in elasticsearch at index named property
+end

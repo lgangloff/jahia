@@ -1,0 +1,1 @@
+[consequence][]Index the subnodes of {node} in elasticsearch at index named {property}=elasticSearch.indexChildren({node}, {property}, drools);
